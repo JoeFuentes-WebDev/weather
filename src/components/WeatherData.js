@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import { Header } from './Header';
-import { AirPolution } from './AirPolution';
+import { AirPollution } from './AirPollution';
 import { Temperature } from './Temperature';
 import { SunsetSunrise } from './SunsetSunrise';
 import { ZipNotFound } from './ZipNotFound';
@@ -38,7 +38,12 @@ export const WeatherData = () => {
                 } else {
 
                     const stateURL = `https://zip-api.eu/api/v1/info/US-${zip}?fields=state`;
-                    fetch(stateURL).then(resp => resp.json()).then(state => setLocationState(state))
+                    fetch(stateURL).then(resp => resp.json())
+                        .then(state => {
+                            console.log({ state })
+                            setLocationState(state.error ? '' : state)
+                        })
+                        .catch(err => console.log({ err }))
 
                     setZipNotFound({ zip, notFound: false })
                     setLocationCity(data);
@@ -65,7 +70,7 @@ export const WeatherData = () => {
                     })
                 }
 
-            });
+            }).catch(err => console.log(err));
         }
 
     }, [zip]);
@@ -82,6 +87,8 @@ export const WeatherData = () => {
         setIsLoading(true)
     }
 
+    console.log({ locationCity, locationState })
+
     return (
         <div>
             <input type="text" onChange={setInput} onKeyDown={handleEnter} placeholder="Enter a Zipcode" />
@@ -90,10 +97,10 @@ export const WeatherData = () => {
             {isLoading && <Loading />}
             {zip && !isLoading &&
                 <div>
-                    {locationCity && locationState && <Header city={locationCity} state={locationState} />}
+                    {locationCity && <Header city={locationCity} state={locationState} />}
                     {temperature && <Temperature temp={temperature} />}
                     {sunData && <SunsetSunrise sun={sunData} />}
-                    {airQuality && <AirPolution air={airQuality} />}
+                    {airQuality && <AirPollution air={airQuality} />}
                 </div>
             }
 
