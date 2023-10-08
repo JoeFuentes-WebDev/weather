@@ -1,6 +1,6 @@
 export const Table = ({ title, tableData }) => <div>
-    <h3>{title}</h3>
     <table>
+        <thead><tr><td colspan='2'>{title}</td></tr></thead>
         <tbody>{tableData && tableData.map(t =>
             <tr key={t.id}>
                 <td>{t.label}</td>

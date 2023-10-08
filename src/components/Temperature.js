@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Table } from './Table'
 
@@ -18,7 +17,7 @@ export const Temperature = ({ temp }) => {
     return <div>
 
         <Table title='Temperature' tableData={temperatureData} />
-        <span> select scale <select onChange={toggleScale}>
+        <span className="scale"> select scale <select onChange={toggleScale}>
             <option value='F'>{scalesLabels['F']}</option>
             <option value='C'>{scalesLabels['C']}</option>
         </select>

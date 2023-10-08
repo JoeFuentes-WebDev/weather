@@ -1,4 +1,4 @@
-export const airPolutants = {
+export const airPollutants = {
     so2: 'Sulfur dioxide',
     co: 'Carbon monoxide',
     nh3: 'Ammonia',
