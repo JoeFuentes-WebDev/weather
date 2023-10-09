@@ -28,7 +28,6 @@ export const WeatherData = () => {
     }
 
     const fetchWeatherData = (zip) => {
-        console.log({ zip })
         const latiudeAndLongitudeURL = `https://api.openweathermap.org/geo/1.0/zip?zip=${zip}&appid=df1ad6d37d106029c2cec1eeeb6c13a1`
         fetch(latiudeAndLongitudeURL).then(resp => resp.json()).then(data => {
             if (data.cod) {
