@@ -44,7 +44,7 @@ body {
 input, button {
   font-size: larger;
   padding: 10px;
-  width: 100px
+  width: 150px
 }
 
 input {
@@ -60,6 +60,10 @@ button {
   background-color: orange;
 }
 
+select {
+  background-color: orange;
+}
+
 label {
   display: inline-block;
   text-align: left;
@@ -68,7 +72,7 @@ label {
 
 table {
   margin: auto;
-  margin-top: 20px;
+  margin-top: 30px;
   font-weight: bold;
   background-color: #000;
   color: #fff
@@ -87,4 +91,11 @@ table thead {
 
 .scale {
   margin-left: 250px;
+}
+
+img {
+  margin: -13px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
 }
