@@ -11,7 +11,7 @@ export const Temperature = ({ temp }) => {
     const temperatureData = []
 
     temp.forEach((t, i) => {
-        temperatureData.push({ id: i, label: tempLabels[i], value: scale === 'F' ? getFarinhaitTemp(t) + 'F' : getCelciusTemp(t) + 'C' })
+        temperatureData.push({ id: i, label: tempLabels[i], value: scale === 'F' ? getFarinhaitTemp(t) : getCelciusTemp(t) })
     });
 
     return <div>
