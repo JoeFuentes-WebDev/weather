@@ -9,6 +9,6 @@ export const AIR_POLLUTANTS = {
     no2: 'Nitrogen dioxide'
 }
 
-export const tempLabels = ['Actual', 'Feels Like', 'Max TEMP', 'min TEMP'];
+export const TEMP_LABELS = ['Actual', 'Feels Like', 'Max TEMP', 'min TEMP'];
 
-export const scalesLabels = { F: 'Fahrenheit', C: 'Celsius' }
+export const SCALE_LABLES = { F: 'Fahrenheit', C: 'Celsius' }
